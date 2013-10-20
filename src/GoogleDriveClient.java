@@ -19,11 +19,18 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class GoogleDriveClient {
     private final Drive service;
 
-    public GoogleDriveClient(String client_id, String client_secret, String redirect_URI) throws Exception {
+    public GoogleDriveClient() throws Exception {
+
+        Scanner keyScanner = new Scanner(new java.io.File("keys.txt"));
+        String client_id = keyScanner.nextLine();
+        String client_secret = keyScanner.nextLine();
+        String redirect_URI = keyScanner.nextLine();
+
         HttpTransport httpTransport = new NetHttpTransport();
         JsonFactory jsonFactory = new JacksonFactory();
 
