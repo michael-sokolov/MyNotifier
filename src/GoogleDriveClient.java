@@ -24,7 +24,7 @@ import java.util.Scanner;
 public class GoogleDriveClient {
     private final Drive service;
 
-    public GoogleDriveClient() throws Exception {
+    GoogleDriveClient() throws Exception {
 
         Scanner keyScanner = new Scanner(new java.io.File("keys.txt"));
         String client_id = keyScanner.nextLine();
